@@ -3,7 +3,6 @@
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title Strong Password Generator
-# @raycast.description Generate a strong password of requested character length
 # @raycast.mode compact
 
 # Optional parameters:
@@ -11,6 +10,7 @@
 # @raycast.argument1 { "type": "text", "placeholder": "Length (Default: 24)", "optional": true}
 
 # Documentation:
+# @raycast.description Generate a strong password of requested character length.
 # @raycast.author Paolo Centomani
 # @raycast.authorURL https://noveria.it
 
