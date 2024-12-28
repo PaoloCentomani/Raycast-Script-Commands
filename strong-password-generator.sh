@@ -16,4 +16,5 @@
 
 length="${1:-24}"
 
-LC_ALL=C tr -dc "[:graph:]" < /dev/urandom | tr -d "\"\`'" | head -c $length | pbcopy; echo -n `pbpaste`
+LC_ALL=C tr -dc "[:graph:]" < /dev/urandom | tr -d "\"\`'" | head -c $length | pbcopy
+echo -n $(pbpaste)

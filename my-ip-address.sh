@@ -20,13 +20,13 @@ case $1 in
     ;;
 
     ipv6_i)
-    ips_line=$(ifconfig | grep 'inet6.*%en' | awk '{print $2}')
+    ips_line=$(ifconfig | grep "inet6.*%en" | awk "{print $2}")
     read -A ips <<< "$ips_line"
     ip=${ips[1]}
     ;;
 
     ipv4_i)
-    ips_line=$(ifconfig | grep 'inet.*broadcast' | awk '{print $2}')
+    ips_line=$(ifconfig | grep "inet.*broadcast" | awk "{print $2}")
     read -A ips <<< "$ips_line"
     ip=${ips[1]}
     ;;
@@ -36,5 +36,5 @@ case $1 in
     ;;
 esac
 
-echo $ip | tr -d '\n' | pbcopy
+echo $ip | tr -d "\n" | pbcopy
 echo "Copied $ip"
