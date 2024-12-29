@@ -14,12 +14,6 @@
 # @raycast.author Paolo Centomani
 # @raycast.authorURL https://noveria.it
 
-arg=$1
+arg=${1:-$(pbpaste)}
 
-if [[ -z "$arg" ]]
-then
-    str=$(pbpaste)
-    echo "${#str} characters"
-else
-    echo "${#arg} characters"
-fi
+echo "${#arg} characters"

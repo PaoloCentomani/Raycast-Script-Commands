@@ -16,24 +16,21 @@
 
 case $1 in
     ipv6_e)
-    ip=$(curl --ipv6 --silent --max-time 5 https://api64.ipify.org)
-    ;;
-
+        ip=$(curl --ipv6 --silent --max-time 5 https://api64.ipify.org)
+        ;;
     ipv6_i)
-    ips_line=$(ifconfig | grep "inet6.*%en" | awk "{print $2}")
-    read -A ips <<< "$ips_line"
-    ip=${ips[1]}
-    ;;
-
+        ips_line=$(ifconfig | grep "inet6.*%en" | awk "{print $2}")
+        read -A ips <<< "$ips_line"
+        ip=${ips[1]}
+        ;;
     ipv4_i)
-    ips_line=$(ifconfig | grep "inet.*broadcast" | awk "{print $2}")
-    read -A ips <<< "$ips_line"
-    ip=${ips[1]}
-    ;;
-
+        ips_line=$(ifconfig | grep "inet.*broadcast" | awk "{print $2}")
+        read -A ips <<< "$ips_line"
+        ip=${ips[1]}
+        ;;
     *)
-    ip=$(curl --ipv4 --silent --max-time 5 https://api.ipify.org)
-    ;;
+        ip=$(curl --ipv4 --silent --max-time 5 https://api.ipify.org)
+        ;;
 esac
 
 echo $ip | tr -d "\n" | pbcopy
