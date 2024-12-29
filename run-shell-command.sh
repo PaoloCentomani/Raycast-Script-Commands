@@ -20,10 +20,10 @@ dir="${2/#\~/$HOME}"
 
 source ~/.zshrc
 
-if [ -z "$dir" ]
+if [[ -z "$dir" ]]
 then
 	finder_dir=$(osascript -e "tell application \"Finder\"" -e "if exists window 1 then" -e "set pathList to (POSIX path of (folder of the front window as alias))" -e "pathList" -e "end if" -e "end tell")
-	if [ -z "$finder_dir" ]
+	if [[ -z "$finder_dir" ]]
 	then
 		dir="${HOME}"
 	else
@@ -31,7 +31,7 @@ then
 	fi
 fi
 
-if [ -z "$cmd" ]
+if [[ -z "$cmd" ]]
 then
 	open -a Warp.app "$dir"
 else
